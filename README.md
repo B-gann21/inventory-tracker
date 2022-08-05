@@ -9,7 +9,8 @@
 - The time frame for this project was one week; all design, planning, and implementation took place from `Tuesday, August 2nd, 2020` to `Sunday, August 7th, 2022`.  
 
 ### Database Schema:
-![Screen Shot 2022-08-04 at 6 27 12 PM (2)](https://user-images.githubusercontent.com/94757433/182977021-5c5501e0-fb7b-4272-b64b-23ef2fa74db8.png)
+
+![Screen Shot 2022-08-05 at 9 50 24 AM (2)](https://user-images.githubusercontent.com/94757433/183115607-989f07f4-113a-4f71-8cd3-80a3872dd98b.png)
 
 
 ### Using the app
