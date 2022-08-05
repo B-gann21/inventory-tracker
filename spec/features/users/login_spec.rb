@@ -18,6 +18,13 @@ RSpec.describe 'Logging in a User' do
   end
 
   context 'sad path' do
+    it 'if not logged in, can not view /items' do
+      visit '/items'
+
+      expect(current_path).to eq '/'
+      expect(page).to have_content 'Error: you must be logged in to view that page'
+    end
+
     it 'fields can not be blank' do
       visit '/sessions/new'
       fill_in :email, with: @user.email
