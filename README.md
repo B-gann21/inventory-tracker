@@ -4,7 +4,7 @@
 
 - This is a simple inventory tracking app - Users can register an account with an email and password, and once logged in they can add/remove items from their inventory, keeping track of the item's quantity and price along the way. 
 
-- The app will send an email to the user at ther registered address, if a favorited item goes out of stock
+- The app will send an email to the user at their registered address, if a favorited item goes out of stock
 
 - The time frame for this project was one week; all design, planning, and implementation took place from `Tuesday, August 2nd, 2022` to `Sunday, August 7th, 2022`.  
 
