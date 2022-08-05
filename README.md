@@ -4,9 +4,15 @@
 
 - This is a simple inventory tracking app - Users can register an account with an email and password, and once logged in they can add/remove items from their inventory, keeping track of the item's quantity and price along the way. 
 
+- The app will send an email to the user at ther registered address, if a favorited item goes out of stock
+
 - The time frame for this project was one week; all design, planning, and implementation took place from `Tuesday, August 2nd, 2020` to `Sunday, August 7th, 2022`.  
 
-# Using the app
+### Database Schema:
+![Screen Shot 2022-08-04 at 6 27 12 PM (2)](https://user-images.githubusercontent.com/94757433/182977021-5c5501e0-fb7b-4272-b64b-23ef2fa74db8.png)
+
+
+### Using the app
 - Try it out for yourself in the browser: [Heroku link](https://salty-wildwood-73308.herokuapp.com/)
 
 <details>
