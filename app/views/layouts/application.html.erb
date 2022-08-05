@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| %>
+      <strong><%= name.to_s.capitalize %>: <%= msg %></strong>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

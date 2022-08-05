@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'The Landing Page' do
-  it 'should have Hello World' do
-    visit '/'
-    expect(page).to have_content 'Hello World'
+  context 'when not logged in' do
+    it 'should have a button to create an account' do
+      visit '/'
+
+      click_button 'Create an Account'
+      expect(current_path).to eq('/users/new')
+    end
   end
 end
