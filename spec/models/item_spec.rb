@@ -12,8 +12,12 @@ RSpec.describe Item do
 
     it { should validate_presence_of :favorite }
 
-    @categories = ['food/drink', 'tools/hardware', 'household/kitchen', 'other']
     it { should validate_presence_of :category }
-    it { should define_enum_for :category, with: @categories }
+    it { should define_enum_for(:category)
+          .with(['food/drink', 'tools/hardware', 'household/kitchen', 'other']) }
+  end
+
+  context 'relationships' do
+    it { should belong_to :user }
   end
 end
