@@ -1,0 +1,23 @@
+<h1>Create a new Item</h1>
+
+<%= form_with url: '/items', local: true do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br><br>
+
+  <%= f.label :category %><br>
+  <%= f.select :category, ['other',
+                           'household/kitchen',
+                           'tools/hardware',
+                           'food/drink'] %><br><br>
+
+  <%= f.label :favorite %><br>
+  <%= f.check_box :favorite %><br><br>
+
+  <%= f.label :price %><br>
+  <%= f.number_field :price, step: 0.01 %><br><br>
+
+  <%= f.label :quantity %><br>
+  <%= f.number_field :quantity %><br><br>
+
+  <%= f.submit 'Add to Inventory'%>
+<% end %>

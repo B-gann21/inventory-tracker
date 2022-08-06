@@ -1,4 +1,5 @@
 <h1>My Inventory</h1>
+<%= link_to 'Add a new Item', '/items/new' %><br>
 <%= link_to 'Sort by Category', '/items?sort_by_cat=true' %><br>
 <%= link_to 'Sort by most recently updated', '/items', params: {sort_by_cat: false}  %><br>
 <br>
