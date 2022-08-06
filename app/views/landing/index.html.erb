@@ -1,6 +1,6 @@
 <h1>Welcome to the Inventory Tracker!</h1>
 <% if session[:user_id] %>
-  <%= button_to 'Log out', '/sessions', method: :delete %>
+  <%= link_to 'View Inventory', '/items' %>
 <% else %>
   <%= button_to 'Create an Account', '/users/new', method: :get, style: 'margin: 5px' %>
   <%= button_to 'Log in', '/sessions/new', method: :get, style: 'margin: 5px' %>

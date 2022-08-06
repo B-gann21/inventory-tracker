@@ -18,7 +18,7 @@ RSpec.describe 'The Landing Page' do
   end
 
   context 'when logged in' do
-    it 'has a button to log out' do
+    before :each do
       password = Faker::Internet.password
       user = create(:user, password: password, password_confirmation: password)
 
@@ -27,7 +27,9 @@ RSpec.describe 'The Landing Page' do
       fill_in :password, with: password
       click_button 'Log in'
       visit '/'
+    end
 
+    it 'has a button to log out' do
       expect(page).to_not have_button 'Log in'
       expect(page).to_not have_button 'Create an Account'
       
@@ -35,6 +37,12 @@ RSpec.describe 'The Landing Page' do
       expect(current_path).to eq '/'
       expect(page).to have_button 'Log in'
       expect(page).to have_button 'Create an Account'
+    end
+
+    it 'has a button to view all inventory' do
+      click_on 'View Inventory'
+
+      expect(current_path).to eq '/items'
     end
   end
 end
