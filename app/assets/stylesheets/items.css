@@ -1,0 +1,8 @@
+.item-index {
+  width: 15%;
+  float: left;
+  padding: 5px;
+  margin: 5px;
+  border: 2px dashed blue; 
+  background-color: lightblue
+}

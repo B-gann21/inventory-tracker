@@ -1,9 +1,10 @@
+<h1>Log in to an existing Account</h1><br>
 <%= form_with url: '/sessions', local: true do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br><br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br><br>
 
   <%= f.submit 'Log in' %>
 <% end %> 
