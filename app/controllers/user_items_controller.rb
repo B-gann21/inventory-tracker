@@ -3,7 +3,13 @@ class UserItemsController < ApplicationController
     with: :not_logged_in
 
   def index
-    @user = User.find(session[:user_id])
+    user = User.find(session[:user_id])
+
+    if params[:sort_by_cat]
+      @items = user.items_by_category
+    else
+      @items = user.items_by_updated
+    end
   end
 
   private
