@@ -14,6 +14,11 @@
       <strong><%= name.to_s.capitalize %>: <%= msg %></strong>
     <% end %>
 
+    <% if session[:user_id] %>
+      <%= link_to 'Log out', '/sessions', method: :delete %>
+    <% end %>
+    <%= link_to 'Go back to home page', '/' %>
+
     <%= yield %>
   </body>
 </html>
