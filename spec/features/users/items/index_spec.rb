@@ -5,9 +5,9 @@ RSpec.describe 'A User Items Index page' do
     before :each do
       password = Faker::Internet.password
       @user = create(:user, password: password, password_confirmation: password)
-      @item1 = create(:item, user_id: @user.id)
-      @item2 = create(:item, user_id: @user.id)
-      @item3 = create(:item, user_id: @user.id)
+      @item1 = create(:item, user_id: @user.id, category: 'tools/hardware')
+      @item2 = create(:item, user_id: @user.id, category: 'household/kitchen')
+      @item3 = create(:item, user_id: @user.id, category: 'food/drink')
 
       visit '/sessions/new'
       fill_in :email, with: @user.email
@@ -38,6 +38,34 @@ RSpec.describe 'A User Items Index page' do
         expect(page).to have_content "Favorite: #{@item3.favorite}"
         expect(page).to have_content "Amount in stock: #{@item3.quantity}"
         expect(page).to have_content "Price per item: #{@item3.price}"
+      end
+    end
+  
+    describe 'sorting items' do
+      it 'can be sorted by category' do
+        click_on 'Sort by Category'
+        
+        expect(current_path).to eq '/items'
+
+        expect(@item3.name).to appear_before @item2.name
+        expect(@item2.name).to appear_before @item1.name
+        expect(@item1.name).to_not appear_before(@item3.name)
+        expect(@item1.name).to_not appear_before(@item2.name)
+      end
+      
+      it 'can be sorted by updated_at' do
+        @item2.update(quantity: 10)
+        @item3.update(quantity: 8)
+        @item1.update(quantity: 7)
+        visit '/items'
+
+        click_on 'Sort by most recently updated'
+        expect(current_path).to eq '/items'
+
+        expect(@item1.name).to appear_before @item3.name
+        expect(@item3.name).to appear_before @item2.name
+        expect(@item2.name).to_not appear_before @item1.name
+        expect(@item2.name).to_not appear_before @item2.name
       end
     end
   end
