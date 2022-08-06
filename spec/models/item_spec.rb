@@ -10,11 +10,9 @@ RSpec.describe Item do
     it { should validate_presence_of :price }
     it { should validate_numericality_of :price }
 
-    it { should validate_presence_of :favorite }
-
     it { should validate_presence_of :category }
     it { should define_enum_for(:category)
-          .with_values(['food/drink', 'tools/hardware', 'household/kitchen', 'other']) }
+      .with_values(['food/drink', 'tools/hardware', 'household/kitchen', 'other'].sort) }
   end
 
   context 'relationships' do
