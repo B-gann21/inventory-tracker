@@ -40,6 +40,12 @@ RSpec.describe 'A User Items Index page' do
         expect(page).to have_content "Price per item: #{@item3.price}"
       end
     end
+
+    it 'has a link to add an item to the inventory' do
+      click_on 'Add a new Item'
+      expect(current_path).to eq '/items/new'
+      expect(page).to have_content 'Create a new Item'
+    end
   
     describe 'sorting items' do
       it 'can be sorted by category' do
