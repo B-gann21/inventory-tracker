@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   validates_numericality_of :quantity, :price
 
   enum category: ['food/drink', 
-                  'tools/hardware', 
                   'household/kitchen',
-                  'other']
+                  'other',
+                  'tools/hardware'] 
 end

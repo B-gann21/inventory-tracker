@@ -54,10 +54,9 @@ RSpec.describe 'A User Items Index page' do
       end
       
       it 'can be sorted by updated_at' do
-        @item2.update(quantity: 10)
-        @item3.update(quantity: 8)
-        @item1.update(quantity: 7)
-        visit '/items'
+        @item2.update(quantity: 500)
+        @item3.update(quantity: 500)
+        @item1.update(quantity: 500)
 
         click_on 'Sort by most recently updated'
         expect(current_path).to eq '/items'
