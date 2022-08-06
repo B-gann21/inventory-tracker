@@ -1,2 +1,6 @@
-<%= button_to 'Create an Account', '/users/new', method: :get %>
-
+<% if session[:user_id] %>
+  <%= button_to 'Log out', '/sessions', method: :delete %>
+<% else %>
+  <%= button_to 'Create an Account', '/users/new', method: :get %>
+  <%= button_to 'Log in', '/sessions/new', method: :get %>
+<% end %>
