@@ -16,7 +16,7 @@ RSpec.describe 'A User Items Index page' do
     end
 
     it 'shows all items with their attributes nearby' do
-      within "item-#{@item1.id}" do
+      within "#item-#{@item1.id}" do
         expect(page).to have_content "Name: #{@item1.name}"
         expect(page).to have_content "Category: #{@item1.category}"
         expect(page).to have_content "Favorite: #{@item1.favorite}"
@@ -24,7 +24,7 @@ RSpec.describe 'A User Items Index page' do
         expect(page).to have_content "Price per item: #{@item1.price}"
       end
 
-      within "item-#{@item2.id}" do
+      within "#item-#{@item2.id}" do
         expect(page).to have_content "Name: #{@item2.name}"
         expect(page).to have_content "Category: #{@item2.category}"
         expect(page).to have_content "Favorite: #{@item2.favorite}"
@@ -32,7 +32,7 @@ RSpec.describe 'A User Items Index page' do
         expect(page).to have_content "Price per item: #{@item2.price}"
       end
 
-      within "item-#{@item3.id}" do
+      within "#item-#{@item3.id}" do
         expect(page).to have_content "Name: #{@item3.name}"
         expect(page).to have_content "Category: #{@item3.category}"
         expect(page).to have_content "Favorite: #{@item3.favorite}"

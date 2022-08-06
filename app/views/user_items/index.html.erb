@@ -1,1 +1,13 @@
-<h1>My Inventory</h1>
+<h1>My Inventory</h1><br>
+
+<% @user.items.each do |item| %>
+  <div id='item-<%= item.id %>'>
+    <strong>Item Name: <%= item.name %></strong>
+    <ul>
+      <li><strong>Category:</strong> <%= item.category %></li>
+      <li><strong>Is Favorite:</strong> <%= item.favorite %></li>
+      <li><strong>Amount in stock:</strong> <%= item.quantity %></li>
+      <li><strong>Price per item:</strong> <%= item.price %></li>
+    </ul>
+  </div>
+<% end %>
