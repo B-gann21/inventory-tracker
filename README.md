@@ -1,4 +1,4 @@
-# Tea Subscription: A take-home for CTD Labs
+# Inventory Tracker: A take-home for CTD Labs
 
 ## Description
 
