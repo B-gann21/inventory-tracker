@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   # viewing, updating,and  deleting items
   get '/items', to: 'user_items#index' 
+  get '/items/new', to: 'items#new'
+  post '/items', to: 'items#create'
 end
