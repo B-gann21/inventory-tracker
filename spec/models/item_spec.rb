@@ -10,7 +10,7 @@ RSpec.describe Item do
     it { should validate_presence_of :price }
     it { should validate_numericality_of :price }
 
-    it { should validate_presence_of :favorite }
+    it { should validate_inclusion_of(:favorite).in_array([true, false]) }
 
     it { should validate_presence_of :category }
     it { should define_enum_for(:category)
