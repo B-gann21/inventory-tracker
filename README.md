@@ -1,5 +1,7 @@
 # Inventory Tracker: A take-home for CTD Labs
 
+*note: this is still a WIP. Check the issues/project board to see what features have or have not been implemented*
+
 ## Description
 
 - This is a simple inventory tracking app - Users can register an account with an email and password, and once logged in they can add/remove items from their inventory, keeping track of the item's quantity and price along the way. 
